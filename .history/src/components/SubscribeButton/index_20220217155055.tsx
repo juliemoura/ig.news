@@ -17,7 +17,7 @@ export function SubscribeButton({ priceId }: SubscribeButtonProps) {
             return;
         }
         try {
-            const response = await api.post('/api/subscribe') // o nome da rota que ele vai ser criado
+            const response = await api.post('/api') // o nome da rota que ele vai ser criado
             
             const { sessionId } = response.data;
 
