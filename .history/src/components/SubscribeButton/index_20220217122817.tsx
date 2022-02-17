@@ -17,13 +17,13 @@ export function SubscribeButton({ priceId }: SubscribeButtonProps) {
             return;
         }
         try {
-            const response = await api.post('/api') // o nome da rota que ele vai ser criado
+            const response = await api.post('/subscribe') // o nome da rota que ele vai ser criado
             
             const { sessionId } = response.data;
 
             const stripe = await getStripeJs()
 
-            await stripe.redirectToCheckout( { sessionId } )
+            await stripe.redirectToCheckout(sessionId)
         } catch(err) {
             alert(err.message);
         }
