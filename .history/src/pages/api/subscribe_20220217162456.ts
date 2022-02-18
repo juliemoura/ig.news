@@ -25,7 +25,7 @@ export default async(req: NextApiRequest, res: NextApiResponse) => {
             cancel_url: process.env.STRIPE_CANCEL_URL // para onde o usuario precisa ser redirecionado caso cancele a requisição, redirecionamos de volta pra home
         })
         // caso dê certo, vai passar um resultado 200(sucesso)
-        return res.status(200).json({ sessionId: stripeCheckoutSession.id })
+        return res.status(200).json({ sessionId: stripeCheckoutSession })
 
     // se NÃO for uma requisição do método post
     } else {
